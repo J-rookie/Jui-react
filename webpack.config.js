@@ -41,7 +41,7 @@ module.exports={
         //加载器
         loaders: [
             // jsx语法编译 //转换ES6语法
-            { test: /\.(js|jsx)?$/, loaders: ['react-hot','babel'], exclude: /node_modules/ },
+            { test: /\.(js|jsx)?$/, loader: 'babel', exclude: /node_modules/ },
             // 检测CSS后缀使用插件  
             { test: /\.css$/, loader: "style!css"},
             // 添加到这！并且会按照文件大小, 或者转化为 base64, 或者单独作为文件
