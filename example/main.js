@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';  
 import { Router, Link, Route, IndexRoute, hashHistory } from 'react-router';
 
-import Index from './pages/index/index'
+import Jui from '../src/build';
 
-ReactDOM.render(
-<Router history={hashHistory}>
+import Index from './pages/index';
+
+ReactDOM.render((
+  <Router history={hashHistory}>
     <Route path="/" component={Index}/>
-  </Router>,
-document.getElementById('app'))
+  </Router>
+  ),document.getElementById('app'))

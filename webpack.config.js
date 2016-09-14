@@ -10,11 +10,14 @@
 var path = require('path');
 //
 var Webpack = require("webpack");
+//
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports={
     //插件配置
     plugins: [//注意这是一个数组..
-        new Webpack.BannerPlugin("钱小端的初体验")
+        new Webpack.BannerPlugin("钱小端的初体验"),
+        new ExtractTextPlugin("style.css")
     ],
     //入口文件配置
     entry: {
@@ -43,12 +46,12 @@ module.exports={
             // jsx语法编译 //转换ES6语法
             { test: /\.(js|jsx)?$/, loader: 'babel', exclude: /node_modules/ },
             // 检测CSS后缀使用插件  
-            { test: /\.css$/, loader: "style!css"},
+            { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')},
             // 添加到这！并且会按照文件大小, 或者转化为 base64, 或者单独作为文件
             //在大小限制后可以加上&name=./[name].[ext]，会将我们的文件生成在设定的文件夹下。
             { test: /\.(png|jpg)$/, loader: "url-loader?limit=8192&name=./example/temp/images/[name].[ext]" },
             //sass编译
-            { test: /\.scss$/, loader: "style!css!sass"},
+            { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass')},
         ],
     },
     // 转化成es5的语法
