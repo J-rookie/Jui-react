@@ -1,11 +1,31 @@
+"use strict";
 import React from 'react'; 
 import {Grids} from '../../src/build';
 import classNames from 'classnames';
+import homedata from '../../pagejson/home'
 
-var Index = React.createClass({
-  render: function() {
-    return <div><Grids/>hellow</div>
+//console.log(JSON.stringify(homedata));
+let GridsData=[];
+for(let v of homedata) {
+  let data = {
+    icon: <img src={v.image}/>,
+    label: v.title,
+    href: v.links
   }
-});
+  GridsData.push(data);
+}
+export default class Home extends React.Component{
 
-export default Index;
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	      components:GridsData
+	    };
+  	}
+  	render() {
+    return (<div className="page-home">
+    	<Grids data={this.state.components} />
+    </div>)
+   }
+
+};

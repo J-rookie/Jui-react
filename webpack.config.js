@@ -54,10 +54,10 @@ module.exports={
             { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass')},
         ],
     },
-    // 转化成es5的语法
+    // babel配置
     babel: {
-        presets: ['es2015','react'],
-        plugins: ['transform-runtime']
+        "presets": ['react','es2015','es2016'],
+        "plugins": ['transform-runtime']
     },
     resolve: {
         // require时省略的扩展名，如：require('module') 不需要module.js
