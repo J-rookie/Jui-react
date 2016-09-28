@@ -44,24 +44,23 @@ module.exports={
         //加载器
         loaders: [
             // jsx语法编译 //转换ES6语法
-            { test: /\.(js|jsx)?$/, loader: 'babel', exclude: /node_modules/ },
+            { test: /\.(js|jsx)?$/, loader:'babel', exclude: /node_modules/ },
             // 检测CSS后缀使用插件  
             { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')},
             // 添加到这！并且会按照文件大小, 或者转化为 base64, 或者单独作为文件
             //在大小限制后可以加上&name=./[name].[ext]，会将我们的文件生成在设定的文件夹下。
-            { test: /\.(png|jpg)$/, loader: "url-loader?limit=8192&name=./example/temp/images/[name].[ext]" },
+            { test: /\.(png|jpg)$/, loader: "url-loader?limit=8192&name=./example/temp/[name].[ext]" },
             //sass编译
             { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass')},
         ],
     },
-    // babel配置
-    babel: {
-        "presets": ['react','es2015','es2016'],
-        "plugins": ['transform-runtime']
-    },
     resolve: {
         // require时省略的扩展名，如：require('module') 不需要module.js
         extensions: ['', '.js','.jsx'],
+    },
+    babel:{
+        presets : ['es2015','stage-0','react'],
+        plugins : ['transform-runtime']
     },
     // 开启source-map，webpack有多种source-map，在官网文档可以查到//生产模式要关闭否则体积吓死你
     /*devtool: 'eval-source-map'*/

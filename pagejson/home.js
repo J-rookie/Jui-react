@@ -1,60 +1,60 @@
 export default [{
     title: 'layer',
     links: '#/layer',
-    image: './example/temp/images/layer.png'
+    image: './example/temp/layer.png'
 },
 {
     title: 'toast',
     links: '#/toast',
-    image: './example/temp/images/toast.png'
+    image: './example/temp/toast.png'
 },
 {
     title: 'swipe',
     links: '#/swipe',
-    image: './example/temp/images/swipe.png'
+    image: './example/temp/swipe.png'
 },
 {
     title: 'search',
     links: '#/search',
-    image: './example/temp/images/search.png'
+    image: './example/temp/search.png'
 },
 {
     title: 'actionSheet',
     links: '#/actionSheet',
-    image: './example/temp/images/actionSheet.png'
+    image: './example/temp/actionSheet.png'
 },
 {
     title: 'picker',
     links: '#/picker',
-    image: './example/temp/images/picker.png'
+    image: './example/temp/picker.png'
 },
 {
     title: 'header',
     links: '#/header',
-    image: './example/temp/images/header.png'
+    image: './example/temp/header.png'
 },
 {
     title: 'cell',
     links: '#/cell',
-    image: './example/temp/images/cell.png'
+    image: './example/temp/cell.png'
 },
 {
     title: 'grids',
     links: '#/grids',
-    image: './example/temp/images/grids.png'
+    image: './example/temp/grids.png'
 },
 {
     title: 'switch',
     links: '#/switch',
-    image: './example/temp/images/switch.png'
+    image: './example/temp/switch.png'
 },
 {
     title: 'radio',
     links: '#/radio',
-    image: './example/temp/images/radio.png'
+    image: './example/temp/radio.png'
 },
 {
     title: 'checklist',
     links: '#/checklist',
-    image: './example/temp/images/checklist.png'
+    image: './example/temp/checklist.png'
 }]

@@ -24,7 +24,13 @@ export default class Home extends React.Component{
   	}
   	render() {
     return (<div className="page-home">
-    	<Grids data={this.state.components} />
+      <div className="page-home-header">
+        <div className="page-home-title">
+          react移动端常用组件&nbsp;V1.0.0
+          <span className="notes">(请在mobile查看,部分功能不支持PC)</span>
+        </div>
+      </div>
+    	<Grids data={this.state.components} cols="3" ></Grids>
     </div>)
    }
 
