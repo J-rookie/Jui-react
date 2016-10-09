@@ -10,6 +10,7 @@ import Grids from './pages/grids';
 import HeadTop from './pages/header';
 import Switch from './pages/switch';
 import Swipe from './pages/swipe';
+import SearchForm from './pages/search';
 
 ReactDOM.render((
   <Router history={hashHistory}>
@@ -18,5 +19,6 @@ ReactDOM.render((
     <Route path="/header" component={HeadTop}/>
     <Route path="/switch" component={Switch}/>
     <Route path="/swipe" component={Swipe}/>
+    <Route path="/search" component={SearchForm}/>
   </Router>
   ),document.getElementById('app'))

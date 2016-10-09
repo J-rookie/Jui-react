@@ -42,6 +42,10 @@ html,body{
         }
   }
 }
+//间隔
+.page-interval{
+        height:10px;
+    }
 //布局grids
 .page-grids-box{
     padding:10px;
@@ -91,3 +95,10 @@ html,body{
         }
     } 
 } 
+//搜索
+.pinksearch{
+  background-color:#f6194d;
+  .Jui-search-submit{
+   background-color:#f6194d; 
+  }
+}

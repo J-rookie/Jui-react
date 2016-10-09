@@ -8,9 +8,6 @@
 	display: -webkit-box;
 	transform: translate3d(0px, 0px, 0px);
 	-webkit-transform: translate3d(0px, 0px, 0px);
-	&.duration{
-		transition-duration: 200ms;
-	}
 		.Jui-swipe-slide{
 			flex:1;
 			-webkit-flex:1;
@@ -23,7 +20,7 @@
 			}
 		}
 	}
-	.swipe-pagination{
+	.Jui-swipe-pagination{
 		position: absolute;
 		width:100%;
 		text-align: center;
