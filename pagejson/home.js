@@ -54,7 +54,7 @@ export default [{
     image: './example/temp/radio.png'
 },
 {
-    title: 'checklist',
-    links: '#/checklist',
+    title: 'check',
+    links: '#/check',
     image: './example/temp/checklist.png'
 }]

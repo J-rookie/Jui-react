@@ -1,0 +1,34 @@
+.jui-toast{
+	padding:8px;
+	background-color:rgba(0,0,0,0.5);
+	position:fixed;
+	border-radius:6px;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-webkit-transform-origin:translate(-50%,-50%);
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	&.top{
+		top:5%;
+	}
+	&.center{
+		top:50%;
+	}
+	&.bottom{
+		bottom:5%;
+	}
+	.jui-toast-info{
+		width:80px;
+		.jui-toast-img{
+			width:100%;
+			display: block;
+		}
+		.jui-toast-text{
+			color:#fff;
+			text-align:center;
+			line-height:2em;
+			display: block;
+			font-size:14px;
+		}
+	}
+}

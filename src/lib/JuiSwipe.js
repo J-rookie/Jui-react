@@ -1,5 +1,5 @@
 
-class JuiSwipe {
+export default class JuiSwipe {
 
 	constructor(obj){
 		this.data = {
@@ -167,6 +167,3 @@ class JuiSwipe {
 
     }
 }
-
-export default JuiSwipe;
-export { JuiSwipe };

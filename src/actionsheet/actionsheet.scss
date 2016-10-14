@@ -1,0 +1,47 @@
+.Jui-actionsheet{
+	border:1px solid #ccc;
+	background-color:#f1f1f1;
+	border-radius:4px;
+	text-align: center;
+	line-height:40px;
+	height:40px;
+	font-size:14px;
+	color:#333;
+	.Jui-actionsheet-value{
+		text-align: center;
+	}
+}
+.Jui-select-options{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:999;
+	background-color:rgba(0,0,0,0.5);
+	.options-content{
+		width:100%;
+		position:absolute;
+		bottom:0;
+		left:0;
+		color:#323232;
+		text-align: center;
+		background-color:#999;
+		.options-list{
+			background-color:#f1f1f1;
+			a{
+				display: block;
+				line-height:40px;
+				height:40px;
+				border-bottom:1px solid #ccc;
+			}
+		}
+		.close{
+			background-color:#f1f1f1;
+			width:100%;
+			line-height:40px;
+			height:40px;
+			margin-top:3px;
+		}
+	}
+}
