@@ -15,6 +15,7 @@ export default class SearchForm extends React.Component{
       <Header arrow="true" center="picker"></Header>
       <div className="content"> 
       <Picker data={PickerData}></Picker>
+      <Picker data={PickerData} className="blueSelect"></Picker>
       </div>
     </div>)
    }

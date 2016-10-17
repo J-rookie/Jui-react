@@ -7,7 +7,8 @@ export default class PickerSelect extends React.Component{
 	constructor(props) {
 	  super(props);
 	  this.state = {
-	  	selected : this.props.data.options.indexOf(this.props.data.choice)
+	  	selected : this.props.data.options.indexOf(this.props.data.choice),
+	  	value : this.props.data.choice,
 	  }
   	}	
 
@@ -17,8 +18,16 @@ export default class PickerSelect extends React.Component{
   		})
   	}
 
+  	setData(i,v){
+  		this.setState({
+  			selected:i,
+  			value:v,
+  		})
+  		this.props.getValues(this.state.value);
+  	}
+
   	componentDidMount(){
-  		let JuiEvent = new JuiPicker(this.refs.PickerSolt,this.state.selected);
+  		let JuiEvent = new JuiPicker(this.refs.PickerSolt,this.state.selected,this.setData.bind(this));
         JuiEvent.init()  
   	}
 

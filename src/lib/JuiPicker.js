@@ -1,9 +1,10 @@
 
 export default class JuiPicker {
 
-	constructor(obj,index){
+	constructor(obj,index,callback){
 		this.Object = obj;
-        this.index = index;
+        this.index = index >= 0 ? index : 0;
+        this.callback = callback;
 	}
 
 	//绑定事件
@@ -68,9 +69,21 @@ export default class JuiPicker {
                 self.endPoint = -h;
         }else{
             if(speed < 300){
-            	self.distance < 0 ? self.endPoint = self.endPoint-self.endPoint%40-40 : self.endPoint = self.endPoint-self.endPoint%40+40;
+                if(self.distance < -5){
+                   self.endPoint = self.endPoint-self.endPoint%40-40 
+               }else if(self.distance > 5){
+                self.endPoint = self.endPoint-self.endPoint%40+40;
+               }
             }else{
-            	Math.abs(self.endPoint%40) <= 20 ? self.endPoint = self.endPoint-self.endPoint%40:self.endPoint = self.endPoint-self.endPoint%40+40;
+                if(Math.abs(self.endPoint%40) <= 20){
+                     self.endPoint = self.endPoint-self.endPoint%40
+                 }else{
+                    if(self.endPoint-self.endPoint%40 >=0){
+                       self.endPoint = self.endPoint-self.endPoint%40; 
+                    }else{
+                        self.endPoint = self.endPoint-self.endPoint%40-40; 
+                    }  
+                 }
             }
         }
 
@@ -81,33 +94,15 @@ export default class JuiPicker {
         JuiPicker.unbind(this,"touchend",JuiPicker._PickerEnd);
         JuiPicker.unbind(this,"touchmove",JuiPicker._PickerMove); 
         
-        this.value = this.childNodes[self.index].innerText;
-    }
-    //分页符
-    static SwipePagination(obj,i){
-    	let oChild = obj.childNodes;
-    	for(let i=0;i<oChild.length;i++){
-    		let reg = new RegExp('active');
-    		oChild[i].className = oChild[i].className.replace(reg, ' ');
-    	}
-    	oChild[i].className += "active";
-    }
-
-    //动画
-    static _animation(){
-    	let self = this.data;
-    	self.index < self.initial.l-1 ? self.index++ : self.index=0;
-    	self.endPoint = self.index * -self.initial.w;
-    	self.translate = '('+self.endPoint+'px,0,0)';
-    	this.style['transform'] = 'translate3d'+self.translate;
-    	self.pagination?JuiPicker.SwipePagination(self.pagination,self.index):'';
+        this.callback?this.callback(self.index,this.childNodes[self.index].innerText):null;
     }
 
     //初始化
     init(){
 
     	let that = this.Object;
-    	let oChild = that.childNodes;
+    	
+        that.callback = this.callback;
 
        	that.data = {
             startY:0,
@@ -117,14 +112,14 @@ export default class JuiPicker {
             top:0,
             startPoint:0,
             distance:0,
-            endPoint:0,
-            index:this.index||0,
-            translate:"(0,0,0)",
+            endPoint:this.index*-40+80,
+            index:this.index,
+            translate:"(0,"+(this.index*-40+80)+"px,0)",
             h:that.offsetHeight
          }
+        this.callback?this.callback(this.index,that.childNodes[this.index].innerText):null;
 
 		that.style['transform'] = 'translate3d'+that.data.translate;
-		that.style['transition-duration'] = '200ms';
 
 		JuiPicker.unbind(that,"touchstart",JuiPicker._PickerStart);
 		JuiPicker.bind(that,"touchstart",JuiPicker._PickerStart);
