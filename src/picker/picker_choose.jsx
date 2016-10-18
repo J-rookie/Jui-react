@@ -29,6 +29,10 @@ export default class PickerChoose extends React.Component{
   		}
   	}
 
+  	handleChoose(){
+  		console.log(this.state)
+  	}
+
 	render(){
 
 		const {children, className, data, cancel, choose, ...others} = this.props;
@@ -43,7 +47,7 @@ export default class PickerChoose extends React.Component{
 				<nav className="Jui-picker-menu">
 				<a onClick={cancel}>取消</a>
 				<a onClick={()=>{
-					choose(this.state.values)
+					choose(this.state.values);
 				}} className="active">确定</a>
 				</nav>
 				<div className="Jui-picker-select">	

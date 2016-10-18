@@ -117,6 +117,7 @@ export default class JuiPicker {
             translate:"(0,"+(this.index*-40+80)+"px,0)",
             h:that.offsetHeight
          }
+
         this.callback?this.callback(this.index,that.childNodes[this.index].innerText):null;
 
 		that.style['transform'] = 'translate3d'+that.data.translate;

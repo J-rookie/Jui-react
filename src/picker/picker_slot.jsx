@@ -23,12 +23,12 @@ export default class PickerSelect extends React.Component{
   			selected:i,
   			value:v,
   		})
-  		this.props.getValues(this.state.value);
+  		this.props.getValues(v);
   	}
 
   	componentDidMount(){
   		let JuiEvent = new JuiPicker(this.refs.PickerSolt,this.state.selected,this.setData.bind(this));
-        JuiEvent.init()  
+          JuiEvent.init();
   	}
 
 	render(){
