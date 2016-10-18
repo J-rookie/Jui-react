@@ -17,7 +17,12 @@ module.exports={
     //插件配置
     plugins: [//注意这是一个数组..
         new Webpack.BannerPlugin("钱小端的初体验"),
-        new ExtractTextPlugin("style.css")
+        new ExtractTextPlugin("style.css"),
+        new Webpack.DefinePlugin({
+          'process.env':{
+            'NODE_ENV': JSON.stringify('production')
+          }
+        }),
     ],
     //入口文件配置
     entry: {
