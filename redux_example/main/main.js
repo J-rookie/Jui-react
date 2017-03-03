@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Router, Link, Route, IndexRoute, hashHistory } from 'react-router';
 
 import Jui from '../src/build';
-console.log("11")
 
 import './skin.scss';
 import Home from './pages/index';

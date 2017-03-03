@@ -46,5 +46,8 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors --inline"
   }
 }
